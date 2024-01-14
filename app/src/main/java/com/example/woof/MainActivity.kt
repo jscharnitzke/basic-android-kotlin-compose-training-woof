@@ -67,7 +67,12 @@ class MainActivity : ComponentActivity() {
 fun WoofApp() {
     LazyColumn {
         items(dogs) {
-            DogItem(dog = it)
+            DogItem(
+                dog = it,
+                modifier = Modifier.padding(
+                    dimensionResource(id = R.dimen.padding_small)
+                )    
+            )
         }
     }
 }
@@ -146,7 +151,7 @@ fun DogInformation(
 /**
  * Composable that displays what the UI of the app looks like in light theme in the design tab.
  */
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun WoofPreview() {
     WoofTheme(darkTheme = false) {
